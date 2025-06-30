@@ -11,11 +11,4 @@ Invoke-WebRequest -Uri "https://dl.google.com/chrome/install/latest/chrome_insta
 Start-Process -FilePath $chromeInstaller -Args "/silent /install" -Wait
 Remove-Item $chromeInstaller
 
-Write-Host "Installing Adobe Reader..."
-$adobeInstaller = "C:\adobe_reader.exe"
-Invoke-WebRequest -Uri "https://ardownload2.adobe.com/pub/adobe/reader/win/AcrobatDC/2300820420/AcroRdrDC2300820420_en_US.exe" -OutFile $adobeInstaller
-Start-Process -FilePath $adobeInstaller -Args "/sAll /rs /rps /msi EULA_ACCEPT=YES" -Wait
-Remove-Item $adobeInstaller
-
-
 Write-Output "Install complete."
